@@ -3,38 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OakValleySmpPerm</title>
+    <title>Video Player with Button</title>
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
         #video-container {
-            position: relative;
-            width: 100%;
-            height: 60vh; /* 60% of viewport height */
-            overflow: hidden;
+            text-align: center;
         }
 
         video {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 800px;
+        }
+
+        #controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #play-pause-button {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        #time-slider {
+            width: 80%;
+            margin: 0 10px;
+        }
+
+        #button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #website-button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #text {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div id="video-container">
-        <video autoplay loop muted>
+        <video id="myVideo" controls>
             <source src="OakValleySmpPerm.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <div id="controls">
+            <span id="play-pause-button">&#9658;</span>
+            <input id="time-slider" type="range" min="0" value="0">
+        </div>
+        <div id="button-container">
+            <button id="website-button" onclick="openWebsite()">Click to open Website</button>
+        </div>
+        <div id="text">Username - OakValleySmpPerm1 </div>
     </div>
+    <div>
+    <div id="text">Password in discord </div>
+</div>
+    <script>
+        function openWebsite() {
+            window.open("https://aternos.org/server/", "_blank");
+        }
+    </script>
 </body>
 </html>
